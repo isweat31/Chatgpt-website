@@ -1,38 +1,31 @@
 "use client";
 
-import { useState, useCallback } from "react";
-import {
-  getProducts,
-  addProduct,
-  updateProduct,
-  deleteProduct,
-} from "@/lib/productStorage";
-import type { Product, NewProduct, ProductUpdate } from "@/types/product";
+import { useState, useEffect, useCallback } from "react";
+import { readProducts } from "@/lib/productStorage";
+import type { Product } from "@/types/product";
+
+const SYNC_EVENT = "hgs-products-updated";
 
 export function useProducts() {
-  const [products, setProducts] = useState<Product[]>(() => getProducts());
+  const [products, setProducts] = useState<Product[]>([]);
 
-  const refresh = useCallback(() => {
-    setProducts(getProducts());
+  const load = useCallback(() => {
+    setProducts(readProducts());
   }, []);
 
-  const add = useCallback((data: NewProduct): Product => {
-    const product = addProduct(data);
-    setProducts(getProducts());
-    return product;
-  }, []);
+  useEffect(() => {
+    load();
 
-  const update = useCallback((id: string, changes: ProductUpdate): Product | null => {
-    const product = updateProduct(id, changes);
-    if (product) setProducts(getProducts());
-    return product;
-  }, []);
+    window.addEventListener(SYNC_EVENT, load);
+    window.addEventListener("storage", load);
+    window.addEventListener("focus", load);
 
-  const remove = useCallback((id: string): boolean => {
-    const deleted = deleteProduct(id);
-    if (deleted) setProducts(getProducts());
-    return deleted;
-  }, []);
+    return () => {
+      window.removeEventListener(SYNC_EVENT, load);
+      window.removeEventListener("storage", load);
+      window.removeEventListener("focus", load);
+    };
+  }, [load]);
 
-  return { products, add, update, remove, refresh };
+  return { products, refresh: load };
 }

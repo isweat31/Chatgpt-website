@@ -5,8 +5,12 @@ export type Product = {
   description: string;
   image: string;
   category: string;
+  stock: number;
   active: boolean;
+  variant?: string;
+  createdAt: string;
+  updatedAt: string;
 };
 
-export type NewProduct = Omit<Product, "id">;
-export type ProductUpdate = Partial<NewProduct>;
+export type NewProduct = Omit<Product, "id" | "createdAt" | "updatedAt">;
+export type ProductUpdate = Partial<Omit<Product, "id" | "createdAt">>;
