@@ -1,0 +1,1342 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   OWNER DASHBOARD — paste into app/globals.css
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ── Shell & Sidebar ─────────────────────────────────────────────────────── */
+
+.ow-shell {
+  display: flex;
+  min-height: 100vh;
+  background: #f5f4f0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+.ow-sidebar {
+  width: 220px;
+  min-width: 220px;
+  background: #111111;
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.ow-brand {
+  display: block;
+  padding: 22px 20px 20px;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  color: #ffffff;
+  border-bottom: 1px solid #1e1e1e;
+}
+
+.ow-brand em {
+  font-style: normal;
+  color: #666;
+}
+
+.ow-nav {
+  flex: 1;
+  padding: 16px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.ow-nav-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #404040;
+  padding: 4px 10px 8px;
+  margin: 0;
+}
+
+.ow-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 12px;
+  border-radius: 7px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #888888;
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  width: 100%;
+  text-align: left;
+}
+
+.ow-nav-item:hover {
+  background: #1a1a1a;
+  color: #e5e5e5;
+}
+
+.ow-nav-active {
+  background: #1f1f1f;
+  color: #ffffff;
+}
+
+.ow-nav-active svg {
+  opacity: 1;
+}
+
+.ow-sidebar-footer {
+  padding: 10px 10px 20px;
+  border-top: 1px solid #1e1e1e;
+}
+
+.ow-nav-shop {
+  font-size: 13px;
+}
+
+.ow-main {
+  flex: 1;
+  min-width: 0;
+  overflow-y: auto;
+}
+
+/* ── Mobile Header ───────────────────────────────────────────────────────── */
+
+.ow-mobile-header {
+  display: none;
+  background: #111111;
+  padding: 14px 20px 0;
+  flex-direction: column;
+  gap: 0;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.ow-brand-mobile {
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  padding-bottom: 12px;
+}
+
+.ow-brand-mobile em {
+  font-style: normal;
+  color: #666;
+}
+
+.ow-mobile-nav {
+  display: flex;
+  gap: 0;
+  border-top: 1px solid #1e1e1e;
+}
+
+.ow-mobile-tab {
+  flex: 1;
+  text-align: center;
+  padding: 10px 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #888;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.ow-mobile-tab:hover {
+  color: #ccc;
+}
+
+.ow-mobile-tab-active {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+
+/* ── Page Layout ─────────────────────────────────────────────────────────── */
+
+.ow-page {
+  padding: 32px 32px 60px;
+  max-width: 1100px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.ow-page-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.ow-page-title {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+  color: #111111;
+  margin: 0 0 3px;
+}
+
+.ow-page-sub {
+  font-size: 13px;
+  color: #888;
+  margin: 0;
+}
+
+.ow-page-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* ── Buttons ─────────────────────────────────────────────────────────────── */
+
+.ow-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 18px;
+  background: #111111;
+  color: #ffffff;
+  border: none;
+  border-radius: 7px;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.15s;
+  font-family: inherit;
+  line-height: 1.4;
+}
+
+.ow-btn-primary:hover {
+  background: #2a2a2a;
+}
+
+.ow-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: #ffffff;
+  color: #444444;
+  border: 1px solid #e0ddd8;
+  border-radius: 7px;
+  font-size: 13.5px;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.15s, border-color 0.15s;
+  font-family: inherit;
+  line-height: 1.4;
+}
+
+.ow-btn-secondary:hover {
+  background: #fafaf8;
+  border-color: #ccc;
+}
+
+.ow-btn-secondary:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.ow-btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  background: transparent;
+  color: #666;
+  border: 1px solid #e0ddd8;
+  border-radius: 7px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  font-family: inherit;
+  line-height: 1.4;
+}
+
+.ow-btn-ghost:hover {
+  background: #f0ede8;
+  color: #333;
+}
+
+.ow-btn-ghost-red {
+  color: #dc2626;
+  border-color: #fca5a5;
+}
+
+.ow-btn-ghost-red:hover {
+  background: #fef2f2;
+  color: #b91c1c;
+}
+
+.ow-btn-danger {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 18px;
+  background: #dc2626;
+  color: #fff;
+  border: none;
+  border-radius: 7px;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.15s;
+  line-height: 1.4;
+}
+
+.ow-btn-danger:hover {
+  background: #b91c1c;
+}
+
+/* ── Cards ───────────────────────────────────────────────────────────────── */
+
+.ow-card {
+  background: #ffffff;
+  border: 1px solid #ebebeb;
+  border-radius: 10px;
+}
+
+.ow-card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 20px 14px;
+  border-bottom: 1px solid #f0ede8;
+}
+
+.ow-card-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #111;
+  margin: 0;
+}
+
+.ow-card-link {
+  font-size: 12.5px;
+  color: #888;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.15s;
+}
+
+.ow-card-link:hover {
+  color: #111;
+}
+
+/* ── Stats Grid ──────────────────────────────────────────────────────────── */
+
+.ow-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.ow-stat-card {
+  background: #ffffff;
+  border: 1px solid #ebebeb;
+  border-radius: 10px;
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  position: relative;
+  overflow: hidden;
+}
+
+.ow-stat-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: #e8e7e3;
+  border-radius: 10px 10px 0 0;
+}
+
+.ow-stat-green::before { background: #16a34a; }
+.ow-stat-gray::before  { background: #9ca3af; }
+.ow-stat-amber::before { background: #d97706; }
+.ow-stat-red::before   { background: #dc2626; }
+.ow-stat-blue::before  { background: #2563eb; }
+
+.ow-stat-label {
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #999;
+}
+
+.ow-stat-value {
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: -1px;
+  color: #111111;
+  line-height: 1.1;
+}
+
+.ow-stat-value-sm {
+  font-size: 22px;
+  letter-spacing: -0.5px;
+}
+
+.ow-stat-hint {
+  font-size: 11.5px;
+  color: #aaa;
+}
+
+/* ── Dashboard Grid ──────────────────────────────────────────────────────── */
+
+.ow-dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 14px;
+  align-items: start;
+}
+
+/* ── Quick Actions ───────────────────────────────────────────────────────── */
+
+.ow-actions-list {
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ow-action-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.15s;
+  cursor: pointer;
+}
+
+.ow-action-item:hover {
+  background: #f8f7f4;
+}
+
+.ow-action-icon {
+  width: 36px;
+  height: 36px;
+  background: #f5f4f0;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #555;
+  flex-shrink: 0;
+}
+
+.ow-action-title {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #111;
+  margin: 0 0 2px;
+}
+
+.ow-action-desc {
+  font-size: 12px;
+  color: #999;
+  margin: 0;
+}
+
+.ow-action-arrow {
+  color: #ccc;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+/* ── Recent List ─────────────────────────────────────────────────────────── */
+
+.ow-recent-list {
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.ow-recent-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  transition: background 0.12s;
+}
+
+.ow-recent-row:hover {
+  background: #f8f7f4;
+}
+
+.ow-thumb {
+  width: 38px;
+  height: 38px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid #ebebeb;
+  display: block;
+  flex-shrink: 0;
+}
+
+.ow-thumb-placeholder {
+  width: 38px;
+  height: 38px;
+  background: #f5f4f0;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ccc;
+  flex-shrink: 0;
+  border: 1px solid #ebebeb;
+}
+
+.ow-recent-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.ow-recent-name {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #111;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ow-recent-cat {
+  font-size: 11.5px;
+  color: #aaa;
+  display: block;
+  margin-top: 1px;
+}
+
+.ow-recent-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 3px;
+  flex-shrink: 0;
+}
+
+.ow-recent-time {
+  font-size: 11px;
+  color: #bbb;
+}
+
+/* ── Status Badges ───────────────────────────────────────────────────────── */
+
+.ow-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 9px;
+  border-radius: 20px;
+  font-size: 11.5px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.ow-badge-green { background: #f0fdf4; color: #15803d; }
+.ow-badge-gray  { background: #f5f4f0; color: #888; }
+.ow-badge-amber { background: #fffbeb; color: #b45309; }
+.ow-badge-red   { background: #fef2f2; color: #dc2626; }
+
+.ow-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.ow-dot-green { background: #22c55e; }
+.ow-dot-gray  { background: #d1d5db; }
+.ow-dot-amber { background: #f59e0b; }
+.ow-dot-red   { background: #ef4444; }
+
+/* ── Empty States ────────────────────────────────────────────────────────── */
+
+.ow-empty-state {
+  padding: 48px 24px;
+  text-align: center;
+  color: #999;
+  font-size: 14px;
+}
+
+/* ── Categories Panel ────────────────────────────────────────────────────── */
+
+.ow-cats-card {
+  padding: 0;
+}
+
+.ow-cats-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 14px 18px;
+  cursor: pointer;
+  font-family: inherit;
+  text-align: left;
+}
+
+.ow-cats-toggle:hover {
+  background: #fafaf8;
+  border-radius: 10px;
+}
+
+.ow-cats-toggle-label {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #333;
+}
+
+.ow-cats-count {
+  font-size: 11.5px;
+  font-weight: 600;
+  padding: 1px 7px;
+  border-radius: 10px;
+  background: #f0ede8;
+  color: #888;
+  margin-left: 4px;
+}
+
+.ow-cats-body {
+  padding: 0 18px 18px;
+  border-top: 1px solid #f0ede8;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ow-cats-add {
+  display: flex;
+  gap: 8px;
+  padding-top: 14px;
+}
+
+.ow-cats-input {
+  flex: 1;
+}
+
+.ow-cats-empty {
+  font-size: 13px;
+  color: #aaa;
+  margin: 0;
+}
+
+.ow-cats-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.ow-cat-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 10px 5px 12px;
+  border-radius: 20px;
+  background: #f5f4f0;
+  border: 1px solid #e8e6e1;
+  font-size: 13px;
+  color: #444;
+}
+
+.ow-cat-name {
+  font-weight: 500;
+}
+
+.ow-cat-num {
+  font-size: 11px;
+  color: #aaa;
+  font-weight: 600;
+}
+
+.ow-cat-remove {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #e8e6e1;
+  border: none;
+  cursor: pointer;
+  color: #888;
+  padding: 0;
+  transition: background 0.12s, color 0.12s;
+}
+
+.ow-cat-remove:hover {
+  background: #fca5a5;
+  color: #dc2626;
+}
+
+/* ── Toolbar (Search + Filters) ──────────────────────────────────────────── */
+
+.ow-toolbar {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ow-search-wrap {
+  position: relative;
+  max-width: 360px;
+}
+
+.ow-search-icon {
+  position: absolute;
+  left: 11px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #bbb;
+  pointer-events: none;
+}
+
+.ow-search {
+  width: 100%;
+  padding: 9px 34px 9px 34px;
+  border: 1px solid #e0ddd8;
+  border-radius: 8px;
+  font-size: 13.5px;
+  color: #111;
+  background: #fff;
+  box-sizing: border-box;
+  font-family: inherit;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.ow-search:focus {
+  outline: none;
+  border-color: #999;
+  box-shadow: 0 0 0 3px rgba(0,0,0,0.05);
+}
+
+.ow-search-clear {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #bbb;
+  display: flex;
+  align-items: center;
+  padding: 2px;
+  border-radius: 4px;
+  transition: color 0.12s;
+}
+
+.ow-search-clear:hover {
+  color: #666;
+}
+
+.ow-filter-tabs {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.ow-filter-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 13px;
+  border-radius: 7px;
+  border: 1px solid transparent;
+  font-size: 13px;
+  font-weight: 500;
+  color: #777;
+  background: transparent;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.12s, color 0.12s, border-color 0.12s;
+}
+
+.ow-filter-tab:hover {
+  background: #f0ede8;
+  color: #333;
+}
+
+.ow-filter-active {
+  background: #ffffff;
+  border-color: #e0ddd8;
+  color: #111;
+  font-weight: 600;
+}
+
+.ow-filter-num {
+  font-size: 11px;
+  padding: 1px 6px;
+  border-radius: 10px;
+  background: #ebebeb;
+  color: #888;
+  font-weight: 600;
+}
+
+.ow-filter-num-active {
+  background: #111111;
+  color: #fff;
+}
+
+/* ── Product Table ───────────────────────────────────────────────────────── */
+
+.ow-table-card {
+  overflow: hidden;
+}
+
+.ow-table-wrap {
+  overflow-x: auto;
+}
+
+.ow-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+}
+
+.ow-th {
+  padding: 11px 14px;
+  text-align: left;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #999;
+  border-bottom: 1px solid #f0ede8;
+  white-space: nowrap;
+  background: #fafaf8;
+}
+
+.ow-th-right { text-align: right; }
+.ow-th-img   { width: 52px; padding-right: 0; }
+.ow-th-actions { width: 130px; }
+
+.ow-tr {
+  border-bottom: 1px solid #f5f4f0;
+  transition: background 0.1s;
+}
+
+.ow-tr:last-child {
+  border-bottom: none;
+}
+
+.ow-tr:hover {
+  background: #fafaf8;
+}
+
+.ow-td {
+  padding: 13px 14px;
+  color: #222;
+  vertical-align: middle;
+}
+
+.ow-td-img   { width: 52px; padding-right: 8px; }
+.ow-td-right { text-align: right; }
+.ow-td-muted { color: #999; font-size: 13px; }
+.ow-td-none  { color: #ccc; }
+.ow-td-price { font-weight: 600; font-variant-numeric: tabular-nums; }
+
+.ow-td-name {
+  font-weight: 600;
+  color: #111;
+  white-space: nowrap;
+  max-width: 220px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ow-td-variant {
+  font-size: 11.5px;
+  color: #aaa;
+  margin-top: 2px;
+}
+
+.ow-row-img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid #ebebeb;
+  display: block;
+}
+
+.ow-row-img-placeholder {
+  width: 40px;
+  height: 40px;
+  background: #f5f4f0;
+  border-radius: 6px;
+  border: 1px solid #ebebeb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ccc;
+}
+
+.ow-stock-num {
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
+  color: #555;
+}
+
+.ow-td-actions {
+  padding-right: 16px;
+}
+
+.ow-row-actions {
+  display: flex;
+  gap: 6px;
+  justify-content: flex-end;
+}
+
+.ow-row-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-size: 12.5px;
+  font-weight: 500;
+  border: 1px solid #e8e6e1;
+  background: #fff;
+  color: #555;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.12s, border-color 0.12s, color 0.12s;
+}
+
+.ow-row-btn:hover {
+  background: #f5f4f0;
+  color: #111;
+  border-color: #ccc;
+}
+
+.ow-row-btn-red {
+  color: #dc2626;
+  border-color: #fca5a5;
+}
+
+.ow-row-btn-red:hover {
+  background: #fef2f2;
+  color: #b91c1c;
+  border-color: #f87171;
+}
+
+.ow-table-foot {
+  padding: 11px 18px;
+  font-size: 12.5px;
+  color: #bbb;
+  border-top: 1px solid #f0ede8;
+  background: #fafaf8;
+}
+
+/* ── Modal / Overlay ─────────────────────────────────────────────────────── */
+
+.ow-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(2px);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.ow-modal {
+  background: #fff;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 560px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18), 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.ow-modal-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px 18px;
+  border-bottom: 1px solid #f0ede8;
+  position: sticky;
+  top: 0;
+  background: #fff;
+  z-index: 1;
+}
+
+.ow-modal-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #111;
+  margin: 0;
+}
+
+.ow-modal-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 7px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #aaa;
+  transition: background 0.12s, color 0.12s;
+}
+
+.ow-modal-close:hover {
+  background: #f5f4f0;
+  color: #444;
+}
+
+.ow-modal-foot {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 16px 0 0;
+  border-top: 1px solid #f0ede8;
+  margin-top: 20px;
+}
+
+/* ── Form ────────────────────────────────────────────────────────────────── */
+
+.ow-form {
+  padding: 22px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.ow-form-row {
+  display: flex;
+  gap: 14px;
+  align-items: flex-end;
+}
+
+.ow-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ow-form-grow {
+  flex: 1;
+}
+
+.ow-label {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #444;
+  letter-spacing: 0.01em;
+}
+
+.ow-label-opt {
+  font-weight: 400;
+  color: #bbb;
+}
+
+.ow-input,
+.ow-select,
+.ow-textarea {
+  padding: 9px 12px;
+  border: 1px solid #e0ddd8;
+  border-radius: 7px;
+  font-size: 13.5px;
+  color: #111;
+  background: #fff;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: inherit;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.ow-input:focus,
+.ow-select:focus,
+.ow-textarea:focus {
+  outline: none;
+  border-color: #888;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);
+}
+
+.ow-textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.ow-form-error {
+  margin: 0 24px;
+  padding: 10px 14px;
+  background: #fef2f2;
+  border: 1px solid #fca5a5;
+  border-radius: 7px;
+  font-size: 13px;
+  color: #b91c1c;
+}
+
+/* ── Image Upload ────────────────────────────────────────────────────────── */
+
+.ow-upload-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 22px;
+  border: 1.5px dashed #d8d5d0;
+  border-radius: 8px;
+  background: #fafaf8;
+  cursor: pointer;
+  width: 100%;
+  font-family: inherit;
+  color: #888;
+  font-size: 13.5px;
+  font-weight: 500;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.ow-upload-area:hover {
+  border-color: #aaa;
+  background: #f5f4f0;
+  color: #555;
+}
+
+.ow-upload-hint {
+  font-size: 11.5px;
+  color: #bbb;
+  font-weight: 400;
+}
+
+.ow-img-preview {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.ow-img-thumb {
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #e0ddd8;
+  flex-shrink: 0;
+  display: block;
+}
+
+.ow-img-actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* ── Toggle / Switch ─────────────────────────────────────────────────────── */
+
+.ow-form-toggle {
+  background: #fafaf8;
+  border: 1px solid #f0ede8;
+  border-radius: 8px;
+  padding: 14px 16px;
+}
+
+.ow-toggle-label {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  cursor: pointer;
+}
+
+.ow-toggle-track {
+  position: relative;
+  width: 42px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.ow-toggle-input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.ow-toggle-thumb {
+  position: absolute;
+  inset: 0;
+  background: #d1d5db;
+  border-radius: 24px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.ow-toggle-thumb::after {
+  content: "";
+  position: absolute;
+  left: 3px;
+  top: 3px;
+  width: 18px;
+  height: 18px;
+  background: #fff;
+  border-radius: 50%;
+  transition: transform 0.2s;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.18);
+}
+
+.ow-toggle-input:checked + .ow-toggle-thumb {
+  background: #16a34a;
+}
+
+.ow-toggle-input:checked + .ow-toggle-thumb::after {
+  transform: translateX(18px);
+}
+
+.ow-toggle-title {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #222;
+  margin: 0 0 2px;
+}
+
+.ow-toggle-sub {
+  font-size: 12px;
+  color: #aaa;
+  margin: 0;
+}
+
+/* ── Delete Dialog ───────────────────────────────────────────────────────── */
+
+.ow-dialog {
+  background: #fff;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 380px;
+  padding: 28px 28px 24px;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
+}
+
+.ow-dialog-icon {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 14px;
+  color: #d97706;
+}
+
+.ow-dialog-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #111;
+  margin: 0 0 10px;
+}
+
+.ow-dialog-body {
+  font-size: 13.5px;
+  color: #666;
+  margin: 0 0 20px;
+  line-height: 1.55;
+}
+
+.ow-dialog-foot {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────────── */
+
+@media (max-width: 900px) {
+  .ow-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .ow-dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .ow-sidebar {
+    display: none;
+  }
+
+  .ow-mobile-header {
+    display: flex;
+  }
+
+  .ow-page {
+    padding: 20px 16px 48px;
+    gap: 16px;
+  }
+
+  .ow-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .ow-stat-value {
+    font-size: 24px;
+  }
+
+  .ow-th-hide-sm {
+    display: none;
+  }
+
+  .ow-form-row {
+    flex-direction: column;
+  }
+
+  .ow-form-row .ow-form-group[style] {
+    width: 100% !important;
+  }
+
+  .ow-modal {
+    max-height: 95vh;
+    border-radius: 12px 12px 0 0;
+  }
+
+  .ow-overlay {
+    align-items: flex-end;
+    padding: 0;
+  }
+
+  .ow-filter-tabs {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: 4px;
+  }
+
+  .ow-filter-tab {
+    white-space: nowrap;
+  }
+
+  .ow-page-actions .ow-btn-ghost {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .ow-stats-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
