@@ -17,13 +17,6 @@ function relativeTime(dateStr: string): string {
   return new Date(dateStr).toLocaleDateString();
 }
 
-function StatusDot({ product }: { product: Product }) {
-  if (!product.active) return <span className="ow-dot ow-dot-gray" />;
-  if (product.stock === 0) return <span className="ow-dot ow-dot-red" />;
-  if (product.stock <= 5) return <span className="ow-dot ow-dot-amber" />;
-  return <span className="ow-dot ow-dot-green" />;
-}
-
 function StatusLabel({ product }: { product: Product }) {
   if (!product.active) return <span className="ow-badge ow-badge-gray">Hidden</span>;
   if (product.stock === 0) return <span className="ow-badge ow-badge-red">Out of stock</span>;

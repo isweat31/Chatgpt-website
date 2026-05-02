@@ -16,7 +16,7 @@ import type { Product, NewProduct } from "@/types/product";
 
 type Filter = "all" | "live" | "hidden" | "low_stock" | "out_of_stock";
 
-type FormData = {
+type ProductFormState = {
   name: string;
   price: string;
   description: string;
@@ -27,7 +27,7 @@ type FormData = {
   image: string;
 };
 
-const EMPTY_FORM: FormData = {
+const EMPTY_FORM: ProductFormState = {
   name: "",
   price: "",
   description: "",
@@ -40,7 +40,7 @@ const EMPTY_FORM: FormData = {
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
-function productToForm(p: Product): FormData {
+function productToForm(p: Product): ProductFormState {
   return {
     name: p.name,
     price: String(p.price),
@@ -53,7 +53,7 @@ function productToForm(p: Product): FormData {
   };
 }
 
-function formToPayload(f: FormData): NewProduct {
+function formToPayload(f: ProductFormState): NewProduct {
   return {
     name: f.name.trim(),
     price: parseFloat(f.price) || 0,
@@ -82,7 +82,7 @@ function statusBadge(p: Product) {
 
 type ModalProps = {
   mode: "add" | "edit";
-  form: FormData;
+  form: ProductFormState;
   categories: string[];
   error: string;
   onField: (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => void;
@@ -376,7 +376,7 @@ export default function ProductManagerPage() {
   const [modalOpen, setModalOpen] = useState(false);
   const [modalMode, setModalMode] = useState<"add" | "edit">("add");
   const [editingId, setEditingId] = useState<string | null>(null);
-  const [form, setForm] = useState<FormData>(EMPTY_FORM);
+  const [form, setForm] = useState<ProductFormState>(EMPTY_FORM);
   const [formError, setFormError] = useState("");
 
   // Delete dialog
